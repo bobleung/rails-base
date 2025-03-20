@@ -20,6 +20,7 @@ For detailed technical specifications and architecture, please see [SPEC.md](SPE
 
 ### Requirements
 
+* Rails 8.0.2
 * Ruby 3.3.5
 * SQLite 3
 * Node.js and Yarn

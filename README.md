@@ -1,24 +1,99 @@
-# README
+# Rails Base
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A modern Ruby on Rails 8 application template with authentication, Docker support, and Kamal deployment.
 
-Things you may want to cover:
+## Overview
 
-* Ruby version
+Rails Base is a starter template for Ruby on Rails applications that provides a solid foundation for building web applications quickly. It includes user authentication, modern UI components, and deployment configurations out of the box.
 
-* System dependencies
+For detailed technical specifications and architecture, please see [SPEC.md](SPEC.md).
 
-* Configuration
+## Features
 
-* Database creation
+* Complete user authentication system
+* Modern UI with TailwindCSS
+* Docker containerization support
+* Kamal deployment setup
+* Multi-database configuration
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+### Requirements
 
-* Services (job queues, cache servers, search engines, etc.)
+* Ruby 3.3.5
+* SQLite 3
+* Node.js and Yarn
 
-* Deployment instructions
+### Setup
 
-* ...
+1. Clone the repository
+   ```bash
+   git clone <repository-url>
+   cd rails-base
+   ```
+
+2. Install dependencies
+   ```bash
+   bundle install
+   ```
+
+3. Setup the database
+   ```bash
+   bin/rails db:setup
+   ```
+
+4. Start the development server
+   ```bash
+   bin/rails server
+   ```
+
+5. Visit http://localhost:3000 in your browser
+
+## Running with Docker
+
+```bash
+docker build -t rails-base .
+docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name rails-base rails-base
+```
+
+## Basic Usage
+
+After setting up the application:
+
+1. Register a new user account at `/register`
+2. Log in with your credentials at `/login`
+3. Access the dashboard at `/dashboard`
+4. Manage your profile at `/profile`
+
+## Deployment
+
+Basic deployment steps using Kamal:
+
+1. Configure your deployment settings in `.kamal/`
+2. Deploy with:
+   ```bash
+   bundle exec kamal setup
+   bundle exec kamal deploy
+   ```
+
+For detailed deployment configuration, see [SPEC.md](SPEC.md).
+
+## Testing
+
+Run the test suite with:
+
+```bash
+bin/rails test
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+[Your license information here]
